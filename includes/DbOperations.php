@@ -39,7 +39,7 @@
 
         public function userLogin($email, $password){
             if ($this->isEmailExists($email)){
-                $hashed_password = getUserPasswordByEmail($email);
+                $hashed_password = $this->getUserPasswordByEmail($email);
                 if(password_verify($password, $hashed_password)){
                     return USER_AUTHENTICATED;
                 } else {
